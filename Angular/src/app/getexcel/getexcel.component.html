@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <div class="h1 text-center">Excel File Upload</div>
+</div>
+
+
+<div class="container mt-4" *ngIf="!downloadOption">
+    <div class="h3 pb-3">Select an Excel File here</div>
+    <div class="input-group">
+        <input type="file" class="form-control" (change)="onChange($event)">
+        <button class="btn btn-outline-secondary" type="button" (click)="onUpload()" >Upload</button>
+    </div>
+</div>
+
+<div class="container mt-4" *ngIf="failuremessage">
+    <div class="text-center alert alert-danger" >
+        File Upload Failed
+    </div>
+</div>
+
+<div class="container mt-4" *ngIf="excelMessage">
+    <div class="text-center alert alert-danger" >
+        Enter an excel file
+    </div>
+</div>
+
+<div class="container mt-4" *ngIf="downloadOption">
+    <div class="text-center alert alert-success" >
+        File Upload Successfull &nbsp;&nbsp;<button class="btn btn-success" (click)="getFileInNewWindow()">Download File</button>
+    </div>
+</div>
